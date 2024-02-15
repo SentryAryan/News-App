@@ -15,7 +15,7 @@ const fetchNews = async (category) => {
     newsContainer.innerHTML = '';
   }
 
-  const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&page=${page}&apiKey=${apiKey}`);
+  const response = await fetch(`https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=us&category=${category}&page=${page}&apiKey=${apiKey}`);
   const data = await response.json();
 
   if (!data.articles) {
