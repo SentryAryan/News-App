@@ -1,0 +1,317 @@
+body {
+  background-color: #101010;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Protest Riot", sans-serif;
+  font-style: normal;
+  margin: 0;
+  color: #fff;
+}
+
+.title {
+  margin-bottom: 10px;
+  margin-top: 5px;
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 300;
+  padding: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  color: #f0c000;
+}
+
+.tab {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tablinks {
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #f0c000;
+  color: #101010;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px; /* Increased font size */
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.tablinks:hover {
+  transform: scale(1.1); /* Added hover animation */
+}
+
+#news-container {
+  width: auto;
+  max-width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  justify-content: center;
+}
+
+.news-article {
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  background-color: #222;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.news-article::after {
+  content: "";
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: left 0.3s ease-in-out;
+}
+
+.news-article:hover::after {
+  left: 100%;
+}
+
+.news-article img {
+  width: 100%;
+  height: 120px; /* Reduced height */
+  object-fit: cover;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.news-article:hover img {
+  transform: scale(1.05);
+}
+
+.news-article h3 {
+  font-size: 20px; /* Increased font size */
+  font-weight: 900;
+  text-align: left;
+  margin-bottom: 5px;
+  color: #fff;
+  transition: color 0.3s ease-in-out;
+}
+
+.news-article:hover h3 {
+  color: #f0c000;
+}
+
+.news-article a {
+  text-decoration: none;
+  color: #f0c000;
+  transition: color 0.3s ease-in-out;
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #f0c000;
+  color: #101010;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  align-self: center;
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.news-article a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: left 0.3s ease-in-out;
+}
+
+.news-article a:hover::after {
+  left: 100%;
+}
+
+.news-article p {
+  /* Limit the height of the description */
+  max-height: 60px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Show ellipsis after 3 lines */
+  -webkit-box-orient: vertical;
+}
+
+.read-more {
+  font-family: "Protest Riot", sans-serif;
+  font-style: normal;
+  background-color: #d0b000;
+  color: #101010;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.read-more::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: left 0.3s ease-in-out;
+}
+
+.read-more:hover {
+  transform: scale(1.05);
+}
+
+.read-more:hover::after {
+  left: 100%;
+}
+
+.read-more:active {
+  background-color: #d0b000;
+  transform: scale(0.95);
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #f0c000;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* CSS for desktops and laptops */
+.news-article {
+  width: 100%;
+  max-width: 300px;
+  background-color: #222;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* CSS for tablets */
+@media (max-width: 768px) {
+  .news-article {
+    width: 100%;
+    max-width: 200px;
+    padding: 15px;
+  }
+}
+
+/* CSS for mobile phones */
+@media (max-width: 480px) {
+  .news-article {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+  }
+}
+
+.tab {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow the buttons to wrap to the next line */
+  margin-bottom: 20px;
+}
+
+.tablinks {
+  background-color: #f0c000;
+  color: #101010;
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.tablinks:hover {
+  transform: scale(1.1);
+}
+
+.tablinks::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark color */
+  transition: left 0.3s ease-in-out;
+}
+
+.tablinks:hover::after {
+  left: 100%;
+}
+
+/* CSS for tablets */
+@media (max-width: 768px) {
+  .tablinks {
+    font-size: 18px; /* Decreased font size */
+    padding: 10px 20px; /* Decreased padding */
+  }
+}
+
+/* CSS for mobile phones */
+@media (max-width: 480px) {
+  .tablinks {
+    font-size: 16px; /* Decreased font size */
+    padding: 5px 10px; /* Decreased padding */
+  }
+}

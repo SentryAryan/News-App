@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News App | Aryan Srivastava</title>
+    <link rel="shortcut icon" href="assets/icon5.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="title">News Headlines</h1>
+    <div class="tab">
+      <button class="tablinks" onclick="fetchNews('general')">General</button>
+      <button class="tablinks" onclick="fetchNews('business')">Business</button>
+      <button class="tablinks" onclick="fetchNews('entertainment')">
+        Entertainment
+      </button>
+      <button class="tablinks" onclick="fetchNews('health')">Health</button>
+      <button class="tablinks" onclick="fetchNews('science')">Science</button>
+      <button class="tablinks" onclick="fetchNews('sports')">Sports</button>
+      <button class="tablinks" onclick="fetchNews('technology')">
+        Technology
+      </button>
+    </div>
+    <div id="news-container" class="animate__animated animate__fadeInUp"></div>
+    <button class="read-more" onclick="searchMoreNews()">
+      Search More News
+    </button>
+    <div id="spinner" style="display: none">
+      <div class="loader"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
