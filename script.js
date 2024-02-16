@@ -1,4 +1,4 @@
-const apiKey = 'aa9d5e9142f448af8fc0fa0877afe50f'; // Replace with your actual API key
+const apiKey = '0b70a72d10ee17c189e2667ce5688613'; // Replace with your actual GNews API key
 const newsContainer = document.getElementById('news-container');
 const spinner = document.getElementById('spinner');
 const searchMoreButton = document.querySelector('.read-more');
@@ -15,7 +15,7 @@ const fetchNews = async (category) => {
     newsContainer.innerHTML = '';
   }
 
-  const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&page=${page}&apiKey=${apiKey}`);
+  const response = await fetch(`https://gnews.io/api/v4/top-headlines?country=us&category=${category}&page=${page}&token=${apiKey}`);
   const data = await response.json();
 
   if (!data.articles) {
@@ -27,7 +27,7 @@ const fetchNews = async (category) => {
     const newsArticle = document.createElement('div');
     newsArticle.classList.add('news-article');
     newsArticle.innerHTML = `
-      <img src="${article.urlToImage}" alt="News Image">
+      <img src="${article.image}" alt="News Image">
       <h3>${article.title}</h3>
       <p>${article.description}</p>
       <a href="${article.url}" target="_blank">Read More</a>
@@ -36,7 +36,7 @@ const fetchNews = async (category) => {
         window.open(article.url, '_blank');
     });
     newsContainer.appendChild(newsArticle);
-}
+  }
 
   // Reset the page number if changing category
   if (category !== currentCategory) {
@@ -44,7 +44,7 @@ const fetchNews = async (category) => {
     currentCategory = category;
   }
 
-  spinner.style.display = 'none'; // Show the spinner
+  spinner.style.display = 'none'; // Hide the spinner
   newsContainer.style.display = 'flex'; // Show the news container
   searchMoreButton.style.display = 'block'; // Show the "Search More News" button
 }
