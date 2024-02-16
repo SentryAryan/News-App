@@ -319,6 +319,7 @@ body {
 /* CSS for the theme switcher */
 #theme-switcher {
   position: fixed;
+  z-index: 10;
   top: 10px;
   right: 10px;
   background-color: #f0c000;
