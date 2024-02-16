@@ -15,7 +15,7 @@ const fetchNews = async (category) => {
     newsContainer.innerHTML = '';
   }
 
-  const response = await fetch(`https://gnews.io/api/v4/top-headlines?country=us&category=${category}&page=${page}&token=${apiKey}`);
+  const response = await fetch(`https://gnews.io/api/v4/top-headlines?country=us&topic=${category}&page=${page}&token=${apiKey}`);
   const data = await response.json();
 
   if (!data.articles) {
@@ -57,3 +57,25 @@ const searchMoreNews = () => {
 
 // Fetch the initial news when the page loads
 fetchNews(currentCategory);
+
+/* Add your existing JavaScript here */
+
+// Function to switch between light and dark mode
+function switchTheme() {
+  const body = document.body;
+  const themeSwitcher = document.getElementById('theme-switcher');
+  const themeIcon = document.getElementById('theme-icon');
+  const themeLabel = document.getElementById('theme-label');
+
+  if (body.classList.contains('light-mode')) {
+    // Switch to dark mode
+    body.classList.remove('light-mode');
+    themeIcon.textContent = '🌞';
+    themeLabel.textContent = 'Light Mode';
+  } else {
+    // Switch to light mode
+    body.classList.add('light-mode');
+    themeIcon.textContent = '🌚';
+    themeLabel.textContent = 'Dark Mode';
+  }
+}
